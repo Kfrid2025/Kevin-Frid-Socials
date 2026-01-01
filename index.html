@@ -43,36 +43,14 @@
       z-index: -3;
     }
 
-    .bg-one {
-      background-image: url("images/img1.png");
-      height: 33.33vh;
-      top: 0;
-      opacity: 0.9;
-    }
+    .bg-one { background-image: url("images/img1.png"); top:0; height:33.33vh; opacity:0.9;}
+    .bg-two { background-image: url("images/img2.jpg"); top:33.33vh; height:33.33vh; opacity:0.9;}
+    .bg-three { background-image: url("images/img3.jpg"); top:66.66vh; height:33.34vh; opacity:0.9;}
 
-    .bg-two {
-      background-image: url("images/img2.jpg");
-      height: 33.33vh;
-      top: 33.33vh;
-      opacity: 0.9;
-    }
-
-    .bg-three {
-      background-image: url("images/img3.jpg");
-      height: 33.34vh;
-      top: 66.66vh;
-      opacity: 0.9;
-    }
-
-    /* Overlay for readability */
     .bg-overlay {
       position: fixed;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.2)
-      );
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.2));
       z-index: -2;
     }
 
@@ -86,7 +64,7 @@
       position: relative;
     }
 
-    /* ===== LINKS (CENTERED, SLIM BUTTONS, ICON LEFT, TEXT CENTERED) ===== */
+    /* ===== LINKS (CENTERED, SLIM, ICON LEFT, TEXT CENTERED) ===== */
     .links {
       display: flex;
       flex-direction: column;
@@ -99,51 +77,47 @@
     }
 
     .link-btn {
-      flex: 1;                        /* equal vertical space */
-      width: 55%;                      /* centered, slim */
       display: flex;
       align-items: center;
       justify-content: flex-start;     /* icon on left */
-      font-weight: 600;
-      text-decoration: none;
-      color: white;
-      margin: 6px 0;                   /* spacing between buttons */
-      padding: 0 16px;                 /* vertical padding small, horizontal padding for icon */
-      border-radius: 12px;             /* slightly smaller corners */
-      background: rgba(255,255,255,0.08); /* light background */
+      width: 55%;                      /* slim, centered */
+      max-height: 70px;                /* prevent stretching too tall */
+      min-height: 50px;                /* keep readable on small screens */
+      padding: 0 16px;
+      margin: 6px 0;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
       backdrop-filter: blur(3px);
       border: 1px solid rgba(176, 38, 255, 0.25);
-      box-shadow:
-        0 0 6px rgba(176, 38, 255, 0.25),
-        0 0 12px rgba(176, 38, 255, 0.15);
-      transition: 
-        transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+      box-shadow: 0 0 6px rgba(176,38,255,0.25), 0 0 12px rgba(176,38,255,0.15);
+      font-weight: 600;
+      font-size: 2.2vh;                 /* scales moderately */
+      text-decoration: none;
+      color: white;
       position: relative;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
 
     .link-btn:hover {
       transform: scale(1.03);
       background: rgba(255,255,255,0.12);
-      box-shadow:
-        0 0 10px rgba(176, 38, 255, 0.5),
-        0 0 20px rgba(176, 38, 255, 0.4);
+      box-shadow: 0 0 10px rgba(176,38,255,0.5), 0 0 20px rgba(176,38,255,0.4);
     }
 
-    /* Icon left */
+    /* Icon on left */
     .link-btn i {
       margin-right: 12px;
-      font-size: 3vh;                  /* scales with button height */
-      filter: drop-shadow(0 0 6px rgba(176, 38, 255, 0.6));
+      font-size: 2.5vh;
       flex-shrink: 0;
+      filter: drop-shadow(0 0 6px rgba(176,38,255,0.6));
     }
 
-    /* Centered text */
+    /* Text centered horizontally and vertically */
     .link-btn span {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       white-space: nowrap;
       text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
@@ -156,9 +130,9 @@
     .x i { color: #ffffff; }
 
     @media (max-width: 600px) {
-      .link-btn { width: 75%; }
-      .link-btn i { font-size: 2.5vh; }
-      .link-btn span { font-size: 2.5vh; }
+      .link-btn { width: 75%; font-size: 2vh; max-height: 60px; min-height: 45px; }
+      .link-btn i { font-size: 2vh; }
+      .link-btn span { font-size: 2vh; }
     }
 
   </style>
