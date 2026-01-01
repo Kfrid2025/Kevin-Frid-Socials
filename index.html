@@ -64,7 +64,7 @@
       opacity: 0.9;
     }
 
-    /* Subtle overlay for readability */
+    /* Overlay for readability */
     .bg-overlay {
       position: fixed;
       inset: 0;
@@ -86,7 +86,7 @@
       position: relative;
     }
 
-    /* ===== LINKS (CENTERED, SLIM BUTTONS) ===== */
+    /* ===== LINKS (CENTERED, SLIM BUTTONS, ICON LEFT, TEXT CENTERED) ===== */
     .links {
       display: flex;
       flex-direction: column;
@@ -100,19 +100,18 @@
 
     .link-btn {
       flex: 1;                        /* equal vertical space */
-      width: 55%;                      /* 50-60% width, centered */
+      width: 55%;                      /* centered, slim */
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 3vh;                  /* scales with button height */
+      justify-content: flex-start;     /* icon on left */
       font-weight: 600;
       text-decoration: none;
       color: white;
       margin: 6px 0;                   /* spacing between buttons */
-      padding: 6px 12px;               /* slimmer padding */
+      padding: 0 16px;                 /* vertical padding small, horizontal padding for icon */
       border-radius: 12px;             /* slightly smaller corners */
-      background: rgba(255,255,255,0.08); /* lighter background */
-      backdrop-filter: blur(3px);      /* less blur */
+      background: rgba(255,255,255,0.08); /* light background */
+      backdrop-filter: blur(3px);
       border: 1px solid rgba(176, 38, 255, 0.25);
       box-shadow:
         0 0 6px rgba(176, 38, 255, 0.25),
@@ -125,22 +124,28 @@
     }
 
     .link-btn:hover {
-      transform: scale(1.03);            /* smaller hover scale */
+      transform: scale(1.03);
       background: rgba(255,255,255,0.12);
       box-shadow:
         0 0 10px rgba(176, 38, 255, 0.5),
         0 0 20px rgba(176, 38, 255, 0.4);
     }
 
-    /* Icon styling */
+    /* Icon left */
     .link-btn i {
-      margin-right: 10px;
-      font-size: 3vh;                /* icon scales with button height */
+      margin-right: 12px;
+      font-size: 3vh;                  /* scales with button height */
       filter: drop-shadow(0 0 6px rgba(176, 38, 255, 0.6));
+      flex-shrink: 0;
     }
 
+    /* Centered text */
     .link-btn span {
-      text-shadow: 0 0 8px rgba(0,0,0,0.6);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
 
     /* Icon colors */
@@ -151,9 +156,11 @@
     .x i { color: #ffffff; }
 
     @media (max-width: 600px) {
-      .link-btn { width: 75%; font-size: 2.5vh; }
+      .link-btn { width: 75%; }
       .link-btn i { font-size: 2.5vh; }
+      .link-btn span { font-size: 2.5vh; }
     }
+
   </style>
 </head>
 
@@ -170,7 +177,7 @@
   <!-- HEADER -->
   <h1>Subscribe &amp; Follow Kevin Frid</h1>
 
-  <!-- FULL PAGE BUTTONS -->
+  <!-- BUTTONS -->
   <div class="links">
     <a class="link-btn youtube" href="https://youtube.com/@kevinfrid2448" target="_blank">
       <i class="fa-brands fa-youtube"></i>
