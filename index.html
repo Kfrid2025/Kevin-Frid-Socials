@@ -34,25 +34,32 @@
       display: block;
     }
 
-    .icon {
+    .icon-bar {
       position: absolute;
-      font-size: 34px;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      transition: transform 0.2s, opacity 0.2s;
+      bottom: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 22px;
     }
 
-    .icon:hover {
-      transform: scale(1.2);
+    .icon-bar a {
+      font-size: 30px;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .icon-bar a:hover {
+      transform: scale(1.25);
       opacity: 0.85;
     }
 
-    /* Icon positions (adjust if needed) */
-    .youtube { top: 22%; left: 50%; transform: translateX(-50%); color: #ff0000; }
-    .instagram { top: 34%; left: 50%; transform: translateX(-50%); color: #e1306c; }
-    .tiktok { top: 46%; left: 50%; transform: translateX(-50%); color: #ffffff; }
-    .facebook { top: 58%; left: 50%; transform: translateX(-50%); color: #1877f2; }
-    .x { top: 70%; left: 50%; transform: translateX(-50%); color: #ffffff; }
+    .youtube { color: #ff0000; }
+    .instagram { color: #e1306c; }
+    .tiktok { color: #ffffff; }
+    .facebook { color: #1877f2; }
+    .x { color: #ffffff; }
   </style>
 </head>
 <body>
@@ -60,25 +67,27 @@
   <div class="container">
     <img src="phone.jpg" alt="Kevin Frid Socials" class="phone-image">
 
-    <a class="icon youtube" href="https://www.youtube.com/@kevinfrid2448" target="_blank">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
+    <div class="icon-bar">
+      <a class="youtube" href="https://www.youtube.com/@kevinfrid2448" target="_blank">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
 
-    <a class="icon instagram" href="https://www.instagram.com/kevinfrid" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
+      <a class="instagram" href="https://www.instagram.com/kevinfrid" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
 
-    <a class="icon tiktok" href="https://www.tiktok.com/@kevin.frid2" target="_blank">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
+      <a class="tiktok" href="https://www.tiktok.com/@kevin.frid2" target="_blank">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
 
-    <a class="icon facebook" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
+      <a class="facebook" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
 
-    <a class="icon x" href="https://x.com/kevinfridnp" target="_blank">
-      <i class="fa-brands fa-x-twitter"></i>
-    </a>
+      <a class="x" href="https://x.com/kevinfridnp" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+    </div>
   </div>
 
 </body>
