@@ -5,7 +5,6 @@
   <title>Kevin Frid | Socials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -30,51 +29,52 @@
 
     .phone-image {
       width: 100%;
-      border-radius: 16px;
       display: block;
     }
 
-    /* TILTED DOCK PANEL */
+    /* SCREEN-ALIGNED DOCK (NOT MIRRORED) */
     .dock {
       position: absolute;
-      bottom: 16%;
-      left: 50%;
-      transform: translateX(-50%) rotate(-6deg) skewX(-2deg);
-      width: 72%;
-      padding: 18px 14px;
+
+      /* Screen placement — adjust slightly if needed */
+      top: 58%;
+      left: 52%;
+
+      transform:
+        translate(-50%, -50%)
+        rotate(-7deg); /* tilt only */
+
+      width: 68%;
+      padding: 16px 12px;
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px 24px;
+      gap: 14px 22px;
       justify-items: center;
 
-      background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
 
-      border-radius: 22px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.45);
     }
 
     .dock a {
       font-size: 28px;
-      color: white;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .dock a:hover {
-      transform: scale(1.25);
-      opacity: 0.85;
+      transform: scale(1.2);
     }
 
+    /* TRUE PLATFORM COLORS */
     .youtube { color: #ff0000; }
     .instagram { color: #e1306c; }
-    .tiktok { color: #ffffff; }
+    .tiktok { color: #000000; }
     .facebook { color: #1877f2; }
-    .x {
-      color: #ffffff;
-      grid-column: span 2; /* center X on last row */
-    }
+    .x { color: #000000; grid-column: span 2; }
   </style>
 </head>
 <body>
