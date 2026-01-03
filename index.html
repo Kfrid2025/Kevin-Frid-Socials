@@ -1,118 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Kevin Frid | Socials</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Kevin Frid | Socials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<style>
-body {
-  margin: 0;
-  background: #0d0d0d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    body{
+      margin:0;
+      background:#0d0d0d;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family: Arial, sans-serif;
+    }
+    .wrap{
+      position:relative;
+      width:min(420px, 92vw);
+    }
+    img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
 
-.container {
-  position: relative;
-  max-width: 360px;
-  width: 90%;
-}
+    /* This overlay is clipped to the PHONE SCREEN polygon (so icons are truly "on the phone") */
+    .screenOverlay{
+      position:absolute;
+      inset:0;
+      /* Screen polygon (from your image) — adjust slightly if you ever change the photo */
+      clip-path: polygon(
+        12.7346% 48.8281%,  /* top-left  */
+        50.9383% 46.2239%,  /* top-right */
+        63.0027% 89.8438%,  /* bottom-right */
+        26.8097% 95.0521%   /* bottom-left */
+      );
+      pointer-events:none; /* allow clicks only on icons */
+    }
 
-.phone-image {
-  width: 100%;
-  display: block;
-}
+    .icon{
+      position:absolute;
+      transform: translate(-50%, -50%) rotate(-7deg); /* match phone tilt */
+      font-size: 34px;
+      text-shadow: 0 6px 14px rgba(0,0,0,0.45);
+      pointer-events:auto;
+      text-decoration:none;
+    }
+    .icon:hover{ transform: translate(-50%, -50%) rotate(-7deg) scale(1.15); }
 
-/* === PHONE SCREEN (TRUE EMBED) === */
-.screen {
-  position: absolute;
+    /* Brand colors */
+    .yt{ color:#ff0000; }
+    .ig{ color:#e1306c; }
+    .tt{ color:#000000; }
+    .fb{ color:#1877f2; }
+    .xx{ color:#000000; }
 
-  /* SCREEN POSITION — tuned to your photo */
-  top: 18%;
-  left: 23%;
-  width: 54%;
-  height: 58%;
+    /* === ICON POSITIONS (inside the screen) ===
+       These are mapped to your screen geometry (2 per row + X centered) */
+    .yt{ left:35.4365%; top:83.3995%; }
+    .ig{ left:48.6252%; top:81.7307%; }
 
-  transform: rotate(-7deg);
-  transform-origin: center;
+    .tt{ left:36.6453%; top:87.4846%; }
+    .fb{ left:49.7689%; top:85.7315%; }
 
-  overflow: hidden;
-  border-radius: 22px;
+    .xx{ left:44.2527%; top:90.2018%; }
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 18px;
-}
-
-/* ICON GRID (NO DOCK, NO GLASS) */
-.icons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 28px;
-  width: 100%;
-  justify-items: center;
-}
-
-.icons a {
-  font-size: 30px;
-  transition: transform 0.2s ease;
-}
-
-.icons a:hover {
-  transform: scale(1.2);
-}
-
-/* TRUE BRAND COLORS */
-.youtube { color: #ff0000; }
-.instagram { color: #e1306c; }
-.tiktok { color: #000000; }
-.facebook { color: #1877f2; }
-.x {
-  color: #000000;
-  grid-column: span 2;
-}
-</style>
+    /* On very small screens, shrink icons a bit */
+    @media (max-width: 360px){
+      .icon{ font-size:30px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <!-- rename your uploaded image file to phone.jpg in the repo -->
+    <img src="phone.jpg" alt="Kevin Frid Socials" />
 
-<div class="container">
-  <img src="phone.jpg" alt="Kevin Frid Socials" class="phone-image">
-
-  <!-- EMBEDDED SCREEN CONTENT -->
-  <div class="screen">
-    <div class="icons">
-      <a class="youtube" href="https://www.youtube.com/@kevinfrid2448" target="_blank">
+    <div class="screenOverlay">
+      <a class="icon yt" href="https://www.youtube.com/@kevinfrid2448" target="_blank" rel="noopener">
         <i class="fa-brands fa-youtube"></i>
       </a>
 
-      <a class="instagram" href="https://www.instagram.com/kevinfrid" target="_blank">
+      <a class="icon ig" href="https://www.instagram.com/kevinfrid" target="_blank" rel="noopener">
         <i class="fa-brands fa-instagram"></i>
       </a>
 
-      <a class="tiktok" href="https://www.tiktok.com/@kevin.frid2" target="_blank">
+      <a class="icon tt" href="https://www.tiktok.com/@kevin.frid2" target="_blank" rel="noopener">
         <i class="fa-brands fa-tiktok"></i>
       </a>
 
-      <a class="facebook" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank">
+      <a class="icon fb" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank" rel="noopener">
         <i class="fa-brands fa-facebook"></i>
       </a>
 
-      <a class="x" href="https://x.com/kevinfridnp" target="_blank">
+      <a class="icon xx" href="https://x.com/kevinfridnp" target="_blank" rel="noopener">
         <i class="fa-brands fa-x-twitter"></i>
       </a>
     </div>
   </div>
-</div>
-
 </body>
 </html>
