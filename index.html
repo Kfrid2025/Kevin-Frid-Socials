@@ -2,11 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kevin Frid</title>
+  <title>Kevin Frid | Socials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    body{
+      margin:0;
+      background:black;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .wrap{
+      position:relative;
+      width:90%;
+      max-width:420px;
+    }
+
+    .photo{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Logo group overlay */
+    .logos{
+      position:absolute;
+      left:50%;
+      bottom:12%;              /* move up/down */
+      transform:translateX(-50%);
+      width:72%;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:18px 22px;
+      justify-items:center;
+      align-items:center;
+      z-index:2;
+    }
+
+    .logo{
+      font-size:38px;
+      text-decoration:none;
+      line-height:1;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+      transition: transform 0.15s ease;
+    }
+    .logo:hover{ transform: scale(1.15); }
+
+    /* Brand-ish colors (high contrast so you can SEE them) */
+    .yt{ color:#ff0000; }
+    .ig{ color:#ff4fd8; }
+    .tt{ color:#00f2ea; }   /* TikTok cyan so it shows on dark */
+    .fb{ color:#1877f2; }
+    .xx{ color:#ffffff; grid-column: span 2; } /* X centered on last row */
+  </style>
 </head>
 
-<body style="margin:0; background:black; text-align:center;">
-  <img src="phone.jpg" style="width:90%; max-width:420px; margin-top:20px;">
+<body>
+  <div class="wrap">
+    <img class="photo" src="phone.jpg" alt="Kevin Frid photo">
+
+    <div class="logos">
+      <a class="logo yt" href="https://www.youtube.com/@kevinfrid2448" target="_blank" rel="noopener">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a class="logo ig" href="https://www.instagram.com/kevinfrid" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a class="logo tt" href="https://www.tiktok.com/@kevin.frid2" target="_blank" rel="noopener">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a class="logo fb" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a class="logo xx" href="https://x.com/kevinfridnp" target="_blank" rel="noopener">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
