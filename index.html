@@ -5,64 +5,69 @@
   <title>Kevin Frid | Socials</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons -->
-  <link rel="stylesheet"
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
   <style>
-    body{
-      margin:0;
-      background:black;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
     }
 
-    .wrap{
-      position:relative;
-      width:90%;
-      max-width:420px;
+    .wrap {
+      position: relative;
+      width: 90%;
+      max-width: 420px;
     }
 
-    .photo{
-      width:100%;
-      height:auto;
-      display:block;
+    .photo {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    /* Logo group overlay */
-    .logos{
-      position:absolute;
-      left:50%;
-      bottom:12%;              /* move up/down */
-      transform:translateX(-50%);
-      width:auto;
-      display:flex;
-      flex-direction;column;   /* vertical stack */
-      gap:12px;                /* space between logos */
-      
-      align-items:center;
-      z-index:2;
+    /* VERTICAL, SLANTED LOGO STACK */
+    .logos {
+      position: absolute;
+      left: 50%;
+      bottom: 12%;
+
+      /* center + slant */
+      transform: translateX(-50%) rotate(-13deg);
+
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+
+      z-index: 2;
     }
 
-    .logo{
-      font-size:38px;
-      text-decoration:none;
-      line-height:1;
+    .logo {
+      font-size: 34px;
+      text-decoration: none;
       filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
       transition: transform 0.15s ease;
     }
-    .logo:hover{ transform: scale(1.15); }
 
-    /* Brand-ish colors (high contrast so you can SEE them) */
-    .yt{ color:#ff0000; }
-    .ig{ color:#ff4fd8; }
-    .tt{ color:#00f2ea; }   /* TikTok cyan so it shows on dark */
-    .fb{ color:#1877f2; }
-    .xx{ color:#ffffff; } 
+    .logo:hover {
+      transform: scale(1.15);
+    }
+
+    /* BRAND COLORS */
+    .yt { color: #ff0000; }
+    .ig { color: #ff4fd8; }
+    .tt { color: #00f2ea; }
+    .fb { color: #1877f2; }
+    .xx { color: #ffffff; }
   </style>
 </head>
 
