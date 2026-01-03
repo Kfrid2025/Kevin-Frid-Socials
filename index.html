@@ -40,26 +40,36 @@
       left: 50%;
       bottom: 12%;
 
-      /* center + slant */
-      transform: translateX(-230%) translateY(15%) rotate(14deg);
+      transform: translateX(-65%) translateY(-8px) rotate(14deg);
 
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;                 /* tight spacing */
       align-items: center;
 
       z-index: 2;
     }
 
+    /* GLOWING ICONS */
     .logo {
       font-size: 38px;
       text-decoration: none;
-      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
-      transition: transform 0.15s ease;
+
+      /* NEON GLOW */
+      filter:
+        drop-shadow(0 0 6px currentColor)
+        drop-shadow(0 0 14px currentColor)
+        drop-shadow(0 0 26px currentColor);
+
+      transition: transform 0.15s ease, filter 0.15s ease;
     }
 
     .logo:hover {
       transform: scale(1.15);
+      filter:
+        drop-shadow(0 0 10px currentColor)
+        drop-shadow(0 0 22px currentColor)
+        drop-shadow(0 0 42px currentColor);
     }
 
     /* BRAND COLORS */
