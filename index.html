@@ -30,27 +30,39 @@
 
     .phone-image {
       width: 100%;
-      border-radius: 14px;
+      border-radius: 16px;
       display: block;
     }
 
-    .icon-bar {
+    /* TILTED DOCK PANEL */
+    .dock {
       position: absolute;
-      bottom: 12%;
+      bottom: 16%;
       left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 22px;
+      transform: translateX(-50%) rotate(-6deg) skewX(-2deg);
+      width: 72%;
+      padding: 18px 14px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 24px;
+      justify-items: center;
+
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
     }
 
-    .icon-bar a {
-      font-size: 30px;
+    .dock a {
+      font-size: 28px;
       color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.8);
       transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .icon-bar a:hover {
+    .dock a:hover {
       transform: scale(1.25);
       opacity: 0.85;
     }
@@ -59,7 +71,10 @@
     .instagram { color: #e1306c; }
     .tiktok { color: #ffffff; }
     .facebook { color: #1877f2; }
-    .x { color: #ffffff; }
+    .x {
+      color: #ffffff;
+      grid-column: span 2; /* center X on last row */
+    }
   </style>
 </head>
 <body>
@@ -67,7 +82,7 @@
   <div class="container">
     <img src="phone.jpg" alt="Kevin Frid Socials" class="phone-image">
 
-    <div class="icon-bar">
+    <div class="dock">
       <a class="youtube" href="https://www.youtube.com/@kevinfrid2448" target="_blank">
         <i class="fa-brands fa-youtube"></i>
       </a>
