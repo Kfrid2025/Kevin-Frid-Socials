@@ -2,183 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kevin Frid | Links</title>
+  <title>Kevin Frid | Socials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
-  <!-- Street Graffiti Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-
     body {
-      min-height: 100vh;
-      color: white;
-      text-align: center;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* ===== BACKGROUND ===== */
-    .bg { position: fixed; inset: 0; z-index: -4; }
-    .bg-one, .bg-two, .bg-three {
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      z-index: -3;
-    }
-    .bg-one { background-image: url("images/img1.png"); top:0; height:33.33vh; opacity:0.9; }
-    .bg-two { background-image: url("images/img2.jpg"); top:33.33vh; height:33.33vh; opacity:0.9; }
-    .bg-three { background-image: url("images/img3.JPG"); top:66.66vh; height:33.34vh; opacity:0.9; }
-
-    .bg-overlay {
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.2));
-      z-index: -2;
-    }
-
-    /* ===== MAIN CONTAINER ===== */
-    .container {
+      margin: 0;
+      background: #0d0d0d;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      gap: 5px; /* smaller vertical gap */
-      position: relative;
-      z-index: 2;
-      padding: 0 10px;
-    }
-
-    /* ===== HEADER ===== */
-    h1 {
-  font-family: 'Rock Salt', cursive;
-  font-size: 3rem;
-  font-weight: 1050;
-  margin-top: 2px;       /* space above header */
-  margin-bottom: 2px;    /* space below header */
-  color: black;
-  line-height: 1.1;      /* smaller line spacing between words */
-  text-shadow:
-    0 0 2px #b026ff,
-    0 0 4px #b026ff;    /* subtle neon glow */
-}
-
-    /* ===== LINKS CONTAINER ===== */
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;  
-      gap: 10px;            
-      width: 100%;
-    }
-
-    /* ===== BUTTONS ===== */
-    .link-btn {
-      display: flex;
       align-items: center;
-      justify-content: flex-start;  
-      width: 55%;                   
-      height: 60px;                 
-      padding: 0 16px;
-      border-radius: 12px;
-      background: rgba(0,0,0,0.85);
-      border: 1px solid rgba(176,38,255,0.25);
-      box-shadow: 0 0 6px rgba(176,38,255,0.25), 0 0 12px rgba(176,38,255,0.15);
-      font-weight: 600;
-      font-size: 2.2vh;
-      text-decoration: none;
-      color: white;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
       position: relative;
-      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      max-width: 360px;
+      width: 90%;
     }
 
-    .link-btn:hover {
-      transform: scale(1.03);
-      background: rgba(0,0,0,1);
-      box-shadow: 0 0 10px rgba(176,38,255,0.5), 0 0 20px rgba(176,38,255,0.4);
+    .phone-image {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
     }
 
-    /* Icon on left */
-    .link-btn i {
-      margin-right: 12px;
-      font-size: 2.5vh;
-      flex-shrink: 0;
-      filter: drop-shadow(0 0 6px rgba(176,38,255,0.6));
-    }
-
-    /* Centered text */
-    .link-btn span {
+    .icon {
       position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      text-shadow: 0 0 6px rgba(0,0,0,0.6);
+      font-size: 34px;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      transition: transform 0.2s, opacity 0.2s;
     }
 
-    /* Icon colors */
-    .youtube i { color: #FF0000; }
-    .instagram i { color: #E1306C; }
-    .tiktok i { color: #00F2EA; }
-    .facebook i { color: #1877F2; }
-    .x i { color: #ffffff; }
-
-    @media (max-width: 600px) {
-      .link-btn { width: 75%; height: 50px; font-size: 2vh; }
-      .link-btn i { font-size: 2vh; }
-      .link-btn span { font-size: 2vh; }
+    .icon:hover {
+      transform: scale(1.2);
+      opacity: 0.85;
     }
 
+    /* Icon positions (adjust if needed) */
+    .youtube { top: 22%; left: 50%; transform: translateX(-50%); color: #ff0000; }
+    .instagram { top: 34%; left: 50%; transform: translateX(-50%); color: #e1306c; }
+    .tiktok { top: 46%; left: 50%; transform: translateX(-50%); color: #ffffff; }
+    .facebook { top: 58%; left: 50%; transform: translateX(-50%); color: #1877f2; }
+    .x { top: 70%; left: 50%; transform: translateX(-50%); color: #ffffff; }
   </style>
 </head>
-
 <body>
 
-  <!-- BACKGROUND -->
-  <div class="bg">
-    <div class="bg-one"></div>
-    <div class="bg-two"></div>
-    <div class="bg-three"></div>
-    <div class="bg-overlay"></div>
-  </div>
-
-  <!-- MAIN CONTAINER -->
   <div class="container">
-    <h1>Subscribe &amp; Follow Kevin Frid</h1>
+    <img src="phone.jpg" alt="Kevin Frid Socials" class="phone-image">
 
-    <!-- BUTTONS -->
-    <div class="links">
-      <a class="link-btn youtube" href="https://youtube.com/@kevinfrid2448" target="_blank">
-        <i class="fa-brands fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-      <a class="link-btn instagram" href="https://www.instagram.com/kevinfrid" target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-      <a class="link-btn tiktok" href="https://www.tiktok.com/@kevin.frid2" target="_blank">
-        <i class="fa-brands fa-tiktok"></i>
-        <span>TikTok</span>
-      </a>
-      <a class="link-btn facebook" href="https://www.facebook.com/share/1DWVsjFWCx/?mibextid=wwXIfr" target="_blank">
-        <i class="fa-brands fa-facebook"></i>
-        <span>Facebook</span>
-      </a>
-      <a class="link-btn x" href="https://x.com/kevinfridnp" target="_blank">
-        <i class="fa-brands fa-x-twitter"></i>
-        <span>X</span>
-      </a>
-    </div>
+    <a class="icon youtube" href="https://www.youtube.com/@kevinfrid2448" target="_blank">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a class="icon instagram" href="https://www.instagram.com/kevinfrid" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a class="icon tiktok" href="https://www.tiktok.com/@kevin.frid2" target="_blank">
+      <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a class="icon facebook" href="https://www.facebook.com/share/1DWyMd8Mh5/?mibextid=wwXIfr" target="_blank">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+
+    <a class="icon x" href="https://x.com/kevinfridnp" target="_blank">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
   </div>
 
 </body>
